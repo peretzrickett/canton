@@ -31,7 +31,7 @@ resource "azurerm_subnet" "subnet" {
 }
 
 resource "azurerm_virtual_machine" "vm" {
-  count                 = 3  # Deploy 3 VMs
+  count                 = 3 # Deploy 3 VMs
   name                  = "canton-vm-${count.index}"
   location              = azurerm_resource_group.rg.location
   resource_group_name   = azurerm_resource_group.rg.name
@@ -64,7 +64,7 @@ resource "azurerm_virtual_machine" "vm" {
 }
 
 resource "azurerm_storage_account" "sa" {
-  count                    = 3  # Deploy 3 storage accounts
+  count                    = 3 # Deploy 3 storage accounts
   name                     = "cantonstorage${count.index}"
   resource_group_name      = azurerm_resource_group.rg.name
   location                 = azurerm_resource_group.rg.location
@@ -73,7 +73,7 @@ resource "azurerm_storage_account" "sa" {
 }
 
 resource "azurerm_network_interface" "vm_nic" {
-  count               = 3  # For 3 VMs
+  count               = 3 # For 3 VMs
   name                = "canton-nic-${count.index}"
   location            = azurerm_resource_group.rg.location
   resource_group_name = azurerm_resource_group.rg.name
